@@ -1,26 +1,132 @@
 @import "tailwindcss";
 
+/* ──────────────────────────────────────────
+   Design Tokens — Custom Color Scheme
+   ────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Background */
+  --bg-page: #FAFAFB;
+  --bg-card: #FFFFFF;
+  --bg-subtle: #F4F4F6;
+  --bg-panel: #F8FAFC;
+  --bg-panel-hover: #F1F5F9;
+
+  /* Border */
+  --border-default: #E5E5EA;
+  --border-subtle: #E2E8F0;
+  --border-strong: #CBD5E1;
+
+  /* Text */
+  --text-primary: #1A1A1D;
+  --text-secondary: #3F3F46;
+  --text-tertiary: #6B6B73;
+  --text-disabled: #9A9AA3;
+  --text-inverse: #FFFFFF;
+
+  /* Surface */
+  --surface-hover: #F1F5F9;
+  --surface-active: #E2E8F0;
+  --surface-selected: #EEF2FF;
+
+  /* Primary (Indigo) */
+  --primary-600: #4F46E5;
+  --primary-500: #6366F1;
+  --primary-400: #818CF8;
+  --primary-300: #A5B4FC;
+  --primary-200: #C7D2FE;
+  --primary-100: #E0E7FF;
+  --primary-50:  #EEF2FF;
+
+  /* Accent Cyan */
+  --accent-cyan-600: #06B6D4;
+  --accent-cyan-500: #22D3EE;
+  --accent-cyan-400: #67E8F9;
+  --accent-cyan-300: #A5F3FC;
+  --accent-cyan-200: #CFFAFE;
+  --accent-cyan-100: #ECFEFF;
+
+  /* Semantic */
+  --success: #10B981;
+  --success-soft: #D1FAE5;
+  --warning: #F59E0B;
+  --warning-soft: #FEF3C7;
+  --error: #EF4444;
+  --error-soft: #FEE2E2;
+
+  /* Focus */
+  --focus-ring: #6366F1;
+
+  /* Gradient endpoints */
+  --gradient-brand-start: #4F46E5;
+  --gradient-brand-end: #06B6D4;
+  --gradient-creative-start: #7C3AED;
+  --gradient-creative-mid: #EC4899;
+  --gradient-creative-end: #F97316;
 }
 
+/* Register tokens for Tailwind v4 */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-bg-page: var(--bg-page);
+  --color-bg-card: var(--bg-card);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-bg-panel: var(--bg-panel);
+  --color-bg-panel-hover: var(--bg-panel-hover);
+
+  --color-border-default: var(--border-default);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-disabled: var(--text-disabled);
+  --color-text-inverse: var(--text-inverse);
+
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-active: var(--surface-active);
+  --color-surface-selected: var(--surface-selected);
+
+  --color-primary-600: var(--primary-600);
+  --color-primary-500: var(--primary-500);
+  --color-primary-400: var(--primary-400);
+  --color-primary-300: var(--primary-300);
+  --color-primary-200: var(--primary-200);
+  --color-primary-100: var(--primary-100);
+  --color-primary-50:  var(--primary-50);
+
+  --color-accent-cyan-600: var(--accent-cyan-600);
+  --color-accent-cyan-500: var(--accent-cyan-500);
+
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-error: var(--error);
+  --color-error-soft: var(--error-soft);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-subtle);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-disabled);
 }
